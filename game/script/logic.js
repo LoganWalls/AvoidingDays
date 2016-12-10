@@ -1,5 +1,9 @@
 window.onload = function(){
     
+    var disp = document.getElementById("canvas");
+
 }
 
-//This is a comment made by Keegan
+function testOnClick() {
+    alert("OH NO NIGGA KEEGAN DID SOMETHIN RIGHT");
+}
