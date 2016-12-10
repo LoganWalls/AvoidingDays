@@ -53,7 +53,3 @@ class Game {
 window.onload = function(){
     window.game = new Game();
 }
-
-function testOnClick() {
-    alert("Whoa, it works.");
-}
