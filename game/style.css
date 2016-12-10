@@ -1,8 +1,13 @@
-#canvas-container{
+body{
+    margin: 0;
+}
+
+
+#viewport{
     text-align: center;
+    overflow: auto;
 }
 
 #canvas{
-    width: 1280px;
-    height: 720px;
+    background: lightskyblue;
 }
