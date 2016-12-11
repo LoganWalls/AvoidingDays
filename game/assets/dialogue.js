@@ -51,32 +51,37 @@ var DIALOGUE = {
 
 	],
 	endingwithfriend: [
-	"Hikikomori(Shut in Syndrome) is a growing phenomenon that affects hundreds of thousands of people across the world. While prevalent in Japan and South Korea there are reported cases of incidents occurring worldwide, with more reported every year.\
-	 It is usually triggered by an event relating to some form of rejection or being treated as a metric. As a result many of these people are unable to accept the kindness of those close to them, and rarely encounter others who would think to treat them with dignity. \
-	Direct metrics are exceedingly hard to track because of the nature of those who encounter this state, and that many families look to keep them hidden out of fear for their family's reputation.\ 
-	No one who is “Hikikomori” is happy with how they are living their life, but they generally are unable to see a way out of their situation. They are generally exceedingly numb emotionally as a way of protecting themselves, caught in an endless cycle of\
-	 existing “outside the norm” with no way they can see to forge ahead. Being seen for who they are, not what they have done seems to be one of the largest factors in the process of their reintegration into society.\
-	This phenomenon shows the impact of our actions when we stop seeing people for who they are instead of what they are. In most cases, one person can make all of the difference.",
+	"Hikkikomori(Shut in Syndrome) is a growing phenomenon that affects hundreds of thousands of people across the world. While prevalent in Japan and South Korea, there are reported cases of incidents occurring worldwide -with more reported every year. \
+	It is usually triggered by an event relating to some form of rejection or a lack of being treated like a person. As a result many of these people are unable to accept the kindness of those close to them, and rarely encounter others who would think to treat them with dignity. \
+	Direct statistics are exceedingly hard to track because of the reclusive behavior exhibited by sufferers of this condition, and the fact that many families look to keep them hidden out of fear for their family's reputation.\
+	No one who is “Hikkikomori” is happy with how they are living their life, but they generally are unable to see a way out of their situation. They turn to numbing themselves emotionally as a way of protecting themselves -caught \
+	in an endless cycle of existing “outside the norm” with no way they can see to forge ahead. Being seen for who they are, not what they have done seems to be one of the largest factors in enabling them to reintegrate into society.\
+	This phenomenon shows the impact of the growing trend in our society to view people as a set of neat numbers and categories, rather than individuals. In some ways this kind of shift might seem inevitable: as our population grows, efficiency demands we make fast decisions \
+	about people whom we know nothing about. But the phenomenon of Hikkikomori suggests that perhaps there is another, more personal element we are beginning to neglect. Through the pursuit of efficiency we too not see a person for their potential, and through that lack of \
+	acknowledgement deny not only who they are, but also who they can become in an instant. In most cases one person can make all of the difference between someone retreating away from the world and taking that first difficult step back into it.",
 
 	],
 	endingwithdigitalfriend: [
-	"Hikikomori(Shut in Syndrome) is a growing phenomenon that affects hundreds of thousands of people across the world. While prevalent in Japan and South Korea there are reported cases of incidents occurring worldwide, with more reported every year.\
-	 It is usually triggered by an event relating to some form of rejection or being treated as a metric. As a result many of these people are unable to accept the kindness of those close to them, and rarely encounter others who would think to treat them with dignity. \
-	Direct metrics are exceedingly hard to track because of the nature of those who encounter this state, and that many families look to keep them hidden out of fear for their family's reputation.\ 
-	No one who is “Hikikomori” is happy with how they are living their life, but they generally are unable to see a way out of their situation. They are generally exceedingly numb emotionally as a way of protecting themselves, caught in an endless cycle of\
-	 existing “outside the norm” with no way they can see to forge ahead. Being seen for who they are, not what they have done seems to be one of the largest factors in the process of their reintegration into society.\
-	 Some of these people seek human interaction via social media or the internet, keeping the world at a safe distance. But their desire to be accepted and connected is evident through these actions. The value of strong relationships,\
-	  regardless of the medium, can help build a person's self worth and give them the courage to face the world.",
+	"Hikkikomori(Shut in Syndrome) is a growing phenomenon that affects hundreds of thousands of people across the world. While prevalent in Japan and South Korea, there are reported cases of incidents occurring worldwide -with more reported every year. \
+	It is usually triggered by an event relating to some form of rejection or a lack of being treated like a person. As a result many of these people are unable to accept the kindness of those close to them, and rarely encounter others who would think to treat them with dignity. \
+	Direct statistics are exceedingly hard to track because of the reclusive behavior exhibited by sufferers of this condition, and the fact that many families look to keep them hidden out of fear for their family's reputation.\
+	No one who is “Hikkikomori” is happy with how they are living their life, but they generally are unable to see a way out of their situation. They turn to numbing themselves emotionally as a way of protecting themselves -caught \
+	in an endless cycle of existing “outside the norm” with no way they can see to forge ahead. Being seen for who they are, not what they have done seems to be one of the largest factors in enabling them to reintegrate into society.\
+	Some of these people seek human interaction via social media or the internet, keeping the world at a safe distance. But their desire to be accepted and connected is evident through these actions. Since their introduction to society, digital interactions between people have \
+	generally been treated as superficial: flimsy substitutes for face-to-face interaction at best, insincere connections contributing to social decline at worst. However, as the population of connected people has grown across the planet and the expressiveness of online communication \
+	has increased, perhaps it is time to revisit our initial judgements about these connections. We are entering an age where what people gain from their experiences may need to be used as the bases of value instead of a factor for determining it. This is supported by the many cases \
+	where the value of strong relationships, regardless of the medium, have helped build a person's self worth and give them the courage to face the world.",
 
 	],
 	endingalone: [
-	"Hikikomori(Shut in Syndrome) is a growing phenomenon that affects hundreds of thousands of people across the world. While prevalent in Japan and South Korea there are reported cases of incidents occurring worldwide, with more reported every year.\
-	 It is usually triggered by an event relating to some form of rejection or being treated as a metric. As a result many of these people are unable to accept the kindness of those close to them, and rarely encounter others who would think to treat them with dignity. \
-	Direct metrics are exceedingly hard to track because of the nature of those who encounter this state, and that many families look to keep them hidden out of fear for their family's reputation.\ 
-	No one who is “Hikikomori” is happy with how they are living their life, but they generally are unable to see a way out of their situation. They are generally exceedingly numb emotionally as a way of protecting themselves, caught in an endless cycle of\
-	 existing “outside the norm” with no way they can see to forge ahead. Being seen for who they are, not what they have done seems to be one of the largest factors in the process of their reintegration into society.\
-	 What do people become when they are not treated as people? Many countries raise their children with a set path for life, and few treat kindly those that stray from it. Few people stay as Hikikomori for their entire live, but there is no way to get back the time that was lost.\
-	  Even though there are not many answers now, the subject needs to be discussed as an issue for the world, not just as a cultural phenomenon exclusive to Japan.",
-	  
+	"Hikkikomori(Shut in Syndrome) is a growing phenomenon that affects hundreds of thousands of people across the world. While prevalent in Japan and South Korea, there are reported cases of incidents occurring worldwide -with more reported every year. \
+	It is usually triggered by an event relating to some form of rejection or a lack of being treated like a person. As a result many of these people are unable to accept the kindness of those close to them, and rarely encounter others who would think to treat them with dignity. \
+	Direct statistics are exceedingly hard to track because of the reclusive behavior exhibited by sufferers of this condition, and the fact that many families look to keep them hidden out of fear for their family's reputation.\
+	No one who is “Hikkikomori” is happy with how they are living their life, but they generally are unable to see a way out of their situation. They turn to numbing themselves emotionally as a way of protecting themselves -caught \
+	in an endless cycle of existing “outside the norm” with no way they can see to forge ahead. Being seen for who they are, not what they have done seems to be one of the largest factors in enabling them to reintegrate into society.\
+	What do people become when they are not treated as people? Many countries raise their children with a set path for life, and few who stray from it are treated kindly. Most people eventually recover from Hikkikomori, but there is no way to regain the time that was lost. \
+	This phenomenon is a growing issue worldwide, yet until recently very little has been done to fully investigate its root causes. Even though there are not many answers now, one thing is clear: the issue runs deeper than a small group of overly-sensitive individuals. \
+	If we ever hope to successfully understand Hikkikomori we need to discuss it as an issue for the world, not just as a cultural phenomenon exclusive to Japan.",
+
 	]
 }
