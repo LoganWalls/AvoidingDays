@@ -137,4 +137,6 @@ class Game {
 
 window.onload = function(){
     window.game = new Game();
+    window.game.view.setDisplay(window.game.view.computer);
+    drawComputer(window.game.view.activeCanvas);
 }
