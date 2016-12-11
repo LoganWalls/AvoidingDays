@@ -1,8 +1,23 @@
-#canvas-container{
-    text-align: center;
+body{
+    margin: 0;
 }
 
-#canvas{
-    width: 1280px;
-    height: 720px;
+
+#viewport{
+    text-align: center;
+    overflow: auto;
+}
+
+.menu-item{
+    cursor: pointer;
+    fill: white;
+    stroke: black;
+    stroke-width: 4;
+}
+
+.menu-text{
+    pointer-events: none;
+    fill: black;
+    font-family: roboto, courier, sans-serif;
+    font-size: 2em;
 }
