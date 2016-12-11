@@ -8,7 +8,6 @@
 //                         .css("max-height", height);
 // }
 
-
 String.prototype.format = function() {
     var s = this,
         i = arguments.length;
@@ -31,7 +30,7 @@ class Renderer {
         this.activeCanvas = null;    
 
         this.menuOptions = {
-            width: 160,
+            width: 220,
             height: 60,
             rx: 10,
             ry: 10,
@@ -47,6 +46,15 @@ class Renderer {
         this.activeCanvas = canvas;
         this.viewport.append(canvas);
     }
+
+    showRandomDialogue(pool, replacement){
+        var i = Math.floor(Math.random()*pool.length);
+        alert(pool[i]);
+        if (!replacement && pool.length > 1){
+            pool.splice(i);
+        }
+    } 
+
 
     // Displays a menu with the given actions
     // at location x, y on the screen.
@@ -101,27 +109,126 @@ class Game {
     this.view = new Renderer(1280, 720);
     this.state = {
         daysPassed: 0, // How many days have passed since the game began?
-        morale: 1,     // How much morale does the player have (-1, 1)?
-        timeLeftToday: 10, // How much time is there left before the day ends?
-        bankBalance: 10000.00 // How much money does the player have?
+        morale: 1,     // How much morale does the player have (-1,1)?
+        stomach: 0.3,    // Reflects how hungry the player is:
+                       // (1 is bloated, 0 is satisfied, -1 is starvation)
+        rest: 1,       // How rested the player is (0,1).
+        timeLeftToday: 10,     // How much time is there left before the day ends?
+        bankBalance: 10000.00, // How much money does the player have?
+        drowsy: 0, // How likely is the player to fall asleep unintentionally? (0,1).
+        ///////////////////////
+        hungerRate: 0.025, // The amount of hunger generated per time unit.
+        exhuastionRate: 0.05 // How fast the rest from sleep wears off.
     };
-    this.roomMenu = [
+
+    this.roomMenuTemplate = [
         ACTIONS.bathe,
         ACTIONS.eat,
         ACTIONS.wait
     ];
+
+    this.eatMenu = [
+        ACTIONS.chips,
+        ACTIONS.ramen,
+        ACTIONS.cook
+    ]
+
+    this.roomMenu = this.roomMenuTemplate.slice();
   }
 
   tryAction(cost) {
     if (cost <= this.state.timeLeftToday){
+        if (Math.random() < game.state.drowsy){
+            this.view.showRandomDialogue(DIALOGUE.sleepyFlavor, true);
+            this.sleep(3);
+            return "fellAsleep";
+        }
         return "success";
     }else{
         return "notEnoughTime"
     }
   }
 
+  adjustStomach(amount){
+    // Adjust stomach, keeping it between the bounds.
+    this.state.stomach = Math.max(-1, Math.min(this.state.stomach + amount,1))
+    // If the player is very hungry.
+    if (this.state.stomach <= 0){
+        this.view.showRandomDialogue(DIALOGUE.hungryFlavor, true);
+        // How severe is the hunger?
+        var hunger = -this.state.stomach;
+        var severity = Math.ceil(hunger / 0.3);
+
+        var eatInd = this.roomMenuTemplate.indexOf(ACTIONS.eat);
+        // Choose some random indices from the menu depending on how severe...
+        var indices = [];
+        for (var i = 0; i < severity; i++){
+            // Select a random menu item which is not
+            // the "eat" item, and which has not already been selected...
+            var candidate = Math.floor(Math.random() * this.roomMenuTemplate.length);
+            while (candidate == eatInd || 
+                  (indices.indexOf(candidate) > 0 && indices.length < this.roomMenuTemplate.length - 2)){
+                candidate = Math.floor(Math.random() * this.roomMenuTemplate.length);
+            }
+            indices.push(candidate);
+        }
+        this.roomMenu = [];
+        // Reconstruct the room menu, replacing those indices with "eat"
+        for (var i = 0; i < this.roomMenuTemplate.length; i++){
+            if (indices.indexOf(i) >= 0){
+                this.roomMenu.push(ACTIONS.eat);
+            }else{
+                this.roomMenu.push(this.roomMenuTemplate[i]);
+            }
+        }
+    
+    }else{
+        // Reset the menu
+        this.roomMenu = this.roomMenuTemplate.slice();
+    }
+    // If the player is very full...
+    if (this.state.stomach > 0.5){
+        this.view.showRandomDialogue(DIALOGUE.bloatedFlavor, true);
+        var fullness = this.state.stomach - 0.5;
+        // Make them drowsy-er.
+        this.state.drowsy += fullness;
+        // Reduce their morale for over-eating.
+        this.state.morale -= fullness / 2;
+    }
+  }
+
+  adjustRest(amount){
+    // Adjust rest, keeping it between the bounds.
+    this.state.rest = Math.max(0, Math.min(this.state.rest + amount,1));
+    // If the player is tired...
+    if (this.state.rest < 0.4){
+        // Make them drowsy-er.
+        this.state.drowsy += this.state.rest - 0.4;
+    }
+  }
+
+  adjustMorale(amount){
+    // Adjust the morale, keeping it between the bounds.
+    this.state.morale = Math.max(0, Math.min(this.state.morale + amount,1));
+
+  }
+
+  updateOptions(){
+    console.log(this.state);
+  }
+
+  sleep(time){
+    alert('You slept for {0} hours...'.format(time * 3));
+    this.state.drowsy = 0;
+    this.passTime(time);
+  }
+
   passTime(time){
     this.state.timeLeftToday -= time;
+    this.adjustStomach(-(this.state.hungerRate * time));
+    this.adjustRest (-(this.state.exhuastionRate * time));
+    this.updateOptions();
+
     if (this.state.timeLeftToday == 0){
         this.advanceDay();
     }
@@ -137,6 +244,7 @@ class Game {
 
 window.onload = function(){
     window.game = new Game();
-    window.game.view.setDisplay(window.game.view.computer);
-    drawComputer(window.game.view.activeCanvas);
+    game.view.setDisplay(window.game.view.room);
+    game.view.showMenu(game.view.room, 500, 50, game.roomMenu)
+    // drawComputer(window.game.view.activeCanvas);
 }
