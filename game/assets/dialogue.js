@@ -1,3 +1,4 @@
+};
 var DIALOGUE = {
 	characterdialogue: [
 		"I can't do it.",
@@ -83,5 +84,21 @@ var DIALOGUE = {
 	This phenomenon is a growing issue worldwide, yet until recently very little has been done to fully investigate its root causes. Even though there are not many answers now, one thing is clear: the issue runs deeper than a small group of overly-sensitive individuals. \
 	If we ever hope to successfully understand Hikkikomori we need to discuss it as an issue for the world, not just as a cultural phenomenon exclusive to Japan.",
 
-	]
-}
+    ]
+    "How long has it been since I slept?"
+    "Can I go to bed yet?",
+    "So tired...",
+    "I can barely keep my eyes open...",
+    sleepyFlavor: [
+    ],
+    "I feel sick..."
+    "So full...",
+    "I ate too much...",
+    bloatedFlavor: [
+    ],
+    "Do I have any food left?"
+    "I haven't eaten in a while...",
+    "So hungry...",
+    hungryFlavor: [
+    "*stomach grumbles*",
+	],
