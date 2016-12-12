@@ -48,7 +48,7 @@ var ACTIONS = {
             game.adjustStomach(-0.2);
         }, 4)
         description: 'I could sleep my life away...'
-    }
+    },
     bathe: {
         name: 'Bathe',
         callback: actionWrapper(function(){
