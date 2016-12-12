@@ -126,6 +126,7 @@ class Game {
         ACTIONS.eat,
         ACTIONS.wait,
         ACTIONS.computer
+        ACTIONS.sleep
     ];
 
     this.eatMenu = [
