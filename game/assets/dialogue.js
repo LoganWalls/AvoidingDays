@@ -1,5 +1,5 @@
 var DIALOGUE = {
-	characterdialogue: [
+    characterdialogue: [
 		"I can't do it.",
 		"I shouldn't do it.",
 		"Why should I do it?",
@@ -15,8 +15,8 @@ var DIALOGUE = {
 		"<i><b>So what is the point of even trying?</b></i> Yeah. I just need to get by. Everything I need for that is in here.",
 		"I just have to get through the day."
 
-	],
-	irlFriend: [
+    ],
+    irlFriend: [
 		"I finally found you! It's been awhile since school hasn't it? I tried visiting you at the company that you told me took you on, but they were very confused when I asked for you.\
 		 <i>You liar.</i> The HR manager barely even remembered your name! <i>How pathetic is that!?</i>",
 		"I went looking for you, but your family was hard to get a hold of and they hadn't heard from you in a long time either. \
@@ -35,8 +35,8 @@ var DIALOGUE = {
 		  "The store down the street is hiring! It's only part time too! <i>So after taxes you'll end up losing money AND have to interact with people who will hate you!</i> It's a win-win!",
 		  "Are you getting enjoyment from living this way? <i>Does this give you meaning and fulfillment?</i> What would you rather be doing?"
 
-	],
-	virtualFriend: [
+    ],
+    virtualFriend: [
 	"You always seems to be online. <i>Isn't the anything better you can do?</i> Don't you have to work? Do you work from home?",
 	"My day has been Terrible! I don't even want to talk about it. How was your day? </i>I want to hear how you did nothing all day.<i>",
 	"I just wanted to say that I really appreciate you always taking the time to talk to me. It always cheers me up and you always know what to say. <i> Are you sure you can keep this up?</i>",
@@ -49,8 +49,8 @@ var DIALOGUE = {
 	"Is there anything different you wish you could do about your life? <i>I mean, aside from what you are doing now.</i>",
 	"What do you think it means to be an adult? <i>What do you need to grow?</i>"
 
-	],
-	endingwithfriend: [
+    ],
+    endingwithfriend: [
 	"Hikkikomori(Shut in Syndrome) is a growing phenomenon that affects hundreds of thousands of people across the world. While prevalent in Japan and South Korea, there are reported cases of incidents occurring worldwide -with more reported every year. \
 	It is usually triggered by an event relating to some form of rejection or a lack of being treated like a person. As a result many of these people are unable to accept the kindness of those close to them, and rarely encounter others who would think to treat them with dignity. \
 	Direct statistics are exceedingly hard to track because of the reclusive behavior exhibited by sufferers of this condition, and the fact that many families look to keep them hidden out of fear for their family's reputation.\
@@ -60,8 +60,8 @@ var DIALOGUE = {
 	about people whom we know nothing about. But the phenomenon of Hikkikomori suggests that perhaps there is another, more personal element we are beginning to neglect. Through the pursuit of efficiency we too not see a person for their potential, and through that lack of \
 	acknowledgement deny not only who they are, but also who they can become in an instant. In most cases one person can make all of the difference between someone retreating away from the world and taking that first difficult step back into it."
 
-	],
-	endingwithdigitalfriend: [
+    ],
+    endingwithdigitalfriend: [
 	"Hikkikomori(Shut in Syndrome) is a growing phenomenon that affects hundreds of thousands of people across the world. While prevalent in Japan and South Korea, there are reported cases of incidents occurring worldwide -with more reported every year. \
 	It is usually triggered by an event relating to some form of rejection or a lack of being treated like a person. As a result many of these people are unable to accept the kindness of those close to them, and rarely encounter others who would think to treat them with dignity. \
 	Direct statistics are exceedingly hard to track because of the reclusive behavior exhibited by sufferers of this condition, and the fact that many families look to keep them hidden out of fear for their family's reputation.\
@@ -72,8 +72,8 @@ var DIALOGUE = {
 	has increased, perhaps it is time to revisit our initial judgements about these connections. We are entering an age where what people gain from their experiences may need to be used as the bases of value instead of a factor for determining it. This is supported by the many cases \
 	where the value of strong relationships, regardless of the medium, have helped build a person's self worth and give them the courage to face the world."
 
-	],
-	endingalone: [
+    ],
+    endingalone: [
 	"Hikkikomori(Shut in Syndrome) is a growing phenomenon that affects hundreds of thousands of people across the world. While prevalent in Japan and South Korea, there are reported cases of incidents occurring worldwide -with more reported every year. \
 	It is usually triggered by an event relating to some form of rejection or a lack of being treated like a person. As a result many of these people are unable to accept the kindness of those close to them, and rarely encounter others who would think to treat them with dignity. \
 	Direct statistics are exceedingly hard to track because of the reclusive behavior exhibited by sufferers of this condition, and the fact that many families look to keep them hidden out of fear for their family's reputation.\
@@ -81,8 +81,7 @@ var DIALOGUE = {
 	in an endless cycle of existing 'outside the norm' with no way they can see to forge ahead. Being seen for who they are, not what they have done seems to be one of the largest factors in enabling them to reintegrate into society.\
 	What do people become when they are not treated as people? Many countries raise their children with a set path for life, and few who stray from it are treated kindly. Most people eventually recover from Hikkikomori, but there is no way to regain the time that was lost. \
 	This phenomenon is a growing issue worldwide, yet until recently very little has been done to fully investigate its root causes. Even though there are not many answers now, one thing is clear: the issue runs deeper than a small group of overly-sensitive individuals. \
-	If we ever hope to successfully understand Hikkikomori we need to discuss it as an issue for the world, not just as a cultural phenomenon exclusive to Japan."
-    ],
+	If we ever hope to successfully understand Hikkikomori we need to discuss it as an issue for the world, not just as a cultural phenomenon exclusive to Japan."    ],
     hungryFlavor: [
     "*stomach grumbles*",
     "So hungry...",
@@ -91,10 +90,10 @@ var DIALOGUE = {
     ],
     bloatedFlavor: [
     "So full...",
-    "I ate too much...",
+	"I ate too much...",
     "I feel sick..."
     ],
-    sleepyFlavor: [
+	sleepyFlavor: [
     "I can barely keep my eyes open...",
     "So tired...",
     "Can I go to bed yet?",

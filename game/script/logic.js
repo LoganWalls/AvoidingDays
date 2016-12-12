@@ -246,7 +246,7 @@ class Game {
 
   advanceDay(){
     this.state.timeLeftToday = 10;
-    this.daysPassed += 1;
+    this.state.daysPassed += 1;
   }
 
 }
@@ -254,7 +254,8 @@ class Game {
 
 window.onload = function(){
     window.game = new Game();
-    game.view.setDisplay(window.game.view.room);
-    game.view.showMenu(game.view.room, 500, 50, game.roomMenu)
-    // drawComputer(window.game.view.activeCanvas);
+	game.view.setDisplay(window.game.view.room);
+	//game.view.showMenu(game.view.room, 500, 50, game.roomMenu);
+	drawRoom(window.game.view.room);
+	drawComputer(window.game.view.computer);
 }

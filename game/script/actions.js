@@ -2,10 +2,10 @@ function actionWrapper(callback, cost){
     return function(menu){
         var outcome = game.tryAction(cost);
         if (outcome === "success"){
-            menu.remove();
+            //menu.remove();
             callback();
             game.passTime(cost);
-            game.view.showMenu(game.view.room, 500, 50, game.roomMenu)
+            //game.view.showMenu(game.view.room, 500, 50, game.roomMenu)
         }else if (outcome === "notEnoughTime"){
             alert("You don't have enough time to do that.");
         }else{
@@ -26,9 +26,8 @@ function submenuWrapper(actions){
 var ACTIONS = {
     computer: {
         name: 'Computer',
-        callback: function(menu){//add switch view fun
-            menu.remove();
-            game.view.showMenu(game.view.activeCanvas, 500, 50, game.computerMenu);
+        callback: function(){
+                window.game.view.setDisplay(window.game.view.computer);
             },
             description: 'Money, people, things.'
         },
@@ -47,7 +46,7 @@ var ACTIONS = {
                 game.adjustMorale(0.2);
                 game.adjustRest(-0.2);
             }, 1),
-            descreption: 'It is easier than laundry.'
+            description: 'It is easier than laundry.'
         },
     wait: {
         name: 'Wait',
@@ -103,7 +102,7 @@ var ACTIONS = {
                 game.adjustMorale(-0.3);
                 game.adjustRest(-0.1);
             }, 2),
-            descritpion: 'Somebody will like me'
+            description: 'Somebody will like me'
         },
     vidgame: {
         name: 'Play Games',
