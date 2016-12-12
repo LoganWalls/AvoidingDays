@@ -24,25 +24,37 @@ function submenuWrapper(actions){
 }
 
 var ACTIONS = {
+    computer: {
+        name: 'Computer',
+        callback: function(menu){//add switch view fun
+            menu.remove();
+            game.view.showMenu(game.view.activeCanvas, 500, 50, game.computerMenu);
+            },
+            description: 'Money, people, things.'
+        },
     eat: {
         name: 'Eat',
         callback: function(menu){
                 menu.remove();
                 game.view.showMenu(game.view.activeCanvas, 500, 50, game.eatMenu);
-            }
+            },
+            description: 'I guess I should eat something.'
         },
     bathe: {
         name: 'Bathe',
         callback: actionWrapper(function(){
                 alert("Clean!");
                 game.adjustMorale(0.2);
-            }, 1)
+                game.adjustRest(-0.2);
+            }, 1),
+            descreption: 'It is easier than laundry.'
         },
     wait: {
         name: 'Wait',
         callback: actionWrapper(function(){
                 alert("You wait for half of a day...");
-            }, 5)
+            }, 5),
+        description: '...'
         },
     // FOOD OPTIONS
     chips: {
@@ -50,7 +62,8 @@ var ACTIONS = {
         callback: actionWrapper(function(){
                 alert("Munch munch!");
                 game.adjustStomach(0.1);
-            }, 1)
+            }, 1),
+            description: 'Gonna need to clean my fingers'
         },
     ramen: {
         name: 'Niban Ramen',
@@ -58,7 +71,8 @@ var ACTIONS = {
                 alert("Slurp slurp!");
                 game.adjustStomach(0.3);
                 game.adjustMorale(-0.05);
-            }, 1)
+            }, 1),
+            description: 'I can live off of this forever.'
         },
     cook: {
         name: 'Cook Stirfry',
@@ -67,7 +81,48 @@ var ACTIONS = {
                 game.adjustStomach(0.4);
                 game.adjustMorale(0.2);
                 game.adjustRest(-0.2);
-            }, 2)
+            }, 2),
+            description: 'Why should I put in the effort?',
         },
-
+    //Computer options
+    survey: {
+        name: 'Survey Bananza!',
+        callback: actionWrapper(function(){
+                alert("You made some money.");
+                game.adjustStomach(-0.1);
+                game.adjustMorale(-0.2);
+                game.adjustRest(-0.1)
+            }, 3),
+        description: 'I dont have much money left...'
+        },
+    facadebook: {
+        name: 'Log in to Facade Book',
+        callback: actionWrapper(function(){
+                alert("You posted lies to make people think your life is amazing.");
+                game.adjustStomach(-0.1);
+                game.adjustMorale(-0.3);
+                game.adjustRest(-0.1);
+            }, 2),
+            descritpion: 'Somebody will like me'
+        },
+    vidgame: {
+        name: 'Play Games',
+        callback: actionWrapper(function(){
+                alert("You beat your old highscore...again.");
+                game.adjustStomach(-0.2);
+                game.adjustMorale(-0.2);
+                game.adjustRest(-0.2);
+            }, 2),
+            description: 'Nothing else to do.'
+        },
+    harmony: {
+        name: 'Harmony',
+        callback: actionWrapper(function(){
+                alert("You chatted with your one person for a while.");
+                game.adjustStomach(-0.2);
+                game.adjustMorale(-0.2);
+                game.adjustRest(-0.2);
+        }, 3),
+            description: 'Better than meeting in person.'
+    }   
 };

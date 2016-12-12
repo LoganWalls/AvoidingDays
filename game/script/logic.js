@@ -124,14 +124,24 @@ class Game {
     this.roomMenuTemplate = [
         ACTIONS.bathe,
         ACTIONS.eat,
-        ACTIONS.wait
+        ACTIONS.wait,
+        ACTIONS.computer
     ];
 
     this.eatMenu = [
         ACTIONS.chips,
         ACTIONS.ramen,
         ACTIONS.cook
-    ]
+    ];
+
+    this.computerMenu = [
+        ACTIONS.survey,
+        ACTIONS.facadebook,
+        ACTIONS.harmony,
+        ACTIONS.vidgame
+     ];
+
+
 
     this.roomMenu = this.roomMenuTemplate.slice();
   }
@@ -145,7 +155,7 @@ class Game {
         }
         return "success";
     }else{
-        return "notEnoughTime"
+        return "notEnoughTime";
     }
   }
 
