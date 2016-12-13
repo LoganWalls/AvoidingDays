@@ -24,6 +24,17 @@ function submenuWrapper(actions){
 }
 
 var ACTIONS = {
+    hangout: {
+        name: 'Friend(?)',
+        callback: actionWrapper(function () {
+            game.view.showRandomDialogue(DIALOGUE.irlFriend, false);
+            game.adjustMorale(0.4);
+            game.adjustRest(-0.2);
+            game.adjustStomach(-0.2);
+            game.advanceDay();
+        }, 1),
+        description: 'Why do they keep coming here?'
+    },
     computer: {
         name: 'Computer',
         callback: function(){
@@ -33,8 +44,8 @@ var ACTIONS = {
         },
     eat: {
         name: 'Eat',
-        callback: function(menu){
-                menu.remove();
+        callback: function(){
+                // menu.remove();
                 game.view.showMenu(game.view.activeCanvas, 500, 50, game.eatMenu);
             },
             description: 'I guess I should eat something.'
@@ -46,7 +57,7 @@ var ACTIONS = {
             game.adjustMorale(0.2);
             game.adjustRest(0.5);
             game.adjustStomach(-0.2);
-        }, 4)
+        }, 4),
         description: 'I could sleep my life away...'
     },
     bathe: {

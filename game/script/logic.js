@@ -100,6 +100,7 @@ class Renderer {
             option.node.onclick = function(){action.callback(menu);};
             menu.add(option);
         })
+        menu.node.id = "#menu";
     }
 }
 
@@ -116,6 +117,7 @@ class Game {
         timeLeftToday: 10,     // How much time is there left before the day ends?
         bankBalance: 10000.00, // How much money does the player have?
         drowsy: 0, // How likely is the player to fall asleep unintentionally? (0,1).
+        isFriendHere: 0, //1 indicates IRL friend is in room, 0 indicates otherwise
         ///////////////////////
         hungerRate: 0.025, // The amount of hunger generated per time unit.
         exhuastionRate: 0.05 // How fast the rest from sleep wears off.
@@ -125,7 +127,7 @@ class Game {
         ACTIONS.bathe,
         ACTIONS.eat,
         ACTIONS.wait,
-        ACTIONS.computer
+        ACTIONS.computer,
         ACTIONS.sleep
     ];
 
@@ -160,7 +162,7 @@ class Game {
     }
   }
 
-  adjustStomach(amount){
+  adjustStomach(amount) {
     // Adjust stomach, keeping it between the bounds.
     this.state.stomach = Math.max(-1, Math.min(this.state.stomach + amount,1))
     // If the player is very hungry.
@@ -214,7 +216,7 @@ class Game {
     // If the player is tired...
     if (this.state.rest < 0.4){
         // Make them drowsy-er.
-        this.state.drowsy += this.state.rest - 0.4;
+        this.state.drowsy += this.state.rest - 0.4; //Does this work?
     }
   }
 
@@ -234,11 +236,17 @@ class Game {
     this.passTime(time);
   }
 
-  passTime(time){
+  passTime(time) {
     this.state.timeLeftToday -= time;
     this.adjustStomach(-(this.state.hungerRate * time));
     this.adjustRest (-(this.state.exhuastionRate * time));
     this.updateOptions();
+
+    if (this.state.timeLeftToday <= 4 && !this.view.room.select("#roomfriend")) {
+        drawIRLFriend(this.view.room);
+    } else if (this.view.room.select("#roomfriend")) {
+        this.view.room.select("#roomfriend").remove();
+    }
 
     if (this.state.timeLeftToday == 0){
         this.advanceDay();

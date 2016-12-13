@@ -1,34 +1,38 @@
 function drawRoom(s) {
+    //Background group
+    var room_background_image = s.image("roombackground.png", 0, 0, 1280, 720);
+
     //Bed group
-    var room_bed_image = s.image("table.jpg", 550, 620, 230, 100);
+    var room_bed_image = s.image("bed.png", 550, 620, 330, 100);
     var room_bed = s.group(room_bed_image);
 
     //Door group
-    var room_door_image = s.image("smiley.png", 0, 220, 10, 500);
+    var room_door_image = s.image("door.png", 0, 320, 10, 400);
     var room_door = s.group(room_door_image);
-
-    /* TEST ANIMATION */
-    room_door.node.onclick = function () {
-        room_door_image.animate({ width: 140 }, 1000, function () {
-            room_door_image.animate({ width: 10 }, 1000);
-        });   
-    } /**/
+    room_door_image.node.id = "room_door"; //For grabbing and animating
 
     //Window group
-    var room_window_image = s.image("smiley.png", 600, 100, 230, 150);
+    var room_window_image = s.image("window.png", 600, 100, 230, 150);
     var room_window = s.group(room_window_image);
 
+    //Fridge group
+    var room_fridge_image = s.image("fridge.png", 950, 520, 100, 200);
+    var room_fridge = s.group(room_fridge_image);
+
     //Bathroom group
-    var room_bathroom_image = s.image("smiley.png", 300, 220, 150, 500);
+    var room_bathroom_image = s.image("door.png", 300, 320, 150, 400);
     var room_bathroom = s.group(room_bathroom_image);
 
     //Desk group
-    var room_desk_image = s.image("table.jpg", 1130, 320, 150, 400);
+    var room_desk_image = s.image("computer.png", 1130, 420, 150, 300);
     var room_desk = s.group(room_desk_image);
 
     //Action bindings
     room_bathroom.node.onmouseover = function () { drawMouseOverBox(s, room_bathroom, ACTIONS.bathe); };
     room_desk.node.onmouseover = function () { drawMouseOverBox(s, room_desk, ACTIONS.computer); };
+    room_bed.node.onmouseover = function () { drawMouseOverBox(s, room_bed, ACTIONS.sleep); };
+    room_window.node.onmouseover = function () { drawMouseOverBox(s, room_window, ACTIONS.wait); };
+    room_fridge.node.onmouseover = function () { drawMouseOverBox(s, room_fridge, ACTIONS.eat); };
 }
 
 function drawComputer(s) {
@@ -93,4 +97,16 @@ function drawMouseOverBox(s, group, action) {
         s.select("#mouseoverboxtext").remove();
         s.select("#mouseoverboxdescriptiontext").remove();
     };
+}
+
+function drawIRLFriend(s) {
+    s.select("#room_door").animate({ width: 140 }, 1000, function () {
+        //Friend group
+        var room_friend_image = s.image("friend.png", 80, 300, 120, 420);
+        var room_friend = s.group(room_friend_image);
+        room_friend.node.onmouseover = function () { drawMouseOverBox(s, room_friend, ACTIONS.hangout); };
+        room_friend.node.id = "roomfriend"; //So it can be removed
+
+        s.select("#room_door").animate({ width: 10 }, 1000);
+    });
 }
